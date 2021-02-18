@@ -1,0 +1,31 @@
+{
+    "experiment_name": "Aorta Segmentation",
+    "_comment": "Available nets: vnet",
+    "Resized Image Size": "128x128x128",
+    "Model":
+    {
+      "architecture" : "VNet",
+      "kwargs" : {}
+    },
+    "Data":
+    {
+      "traindataset_root": "/home/jin/autoimplant/resize/defective_skull/",
+      "testdataset_root": "/home/jin/autoimplant/resize/test/",
+      "resultimage_root": "/home/jin/autoimplant/result/",
+      "num_workers": 0,
+      "batch_size": 1,
+      "validation_split":0,
+      "InputImageSize": [128, 128, 128]
+    },
+    "Optimizer": {
+      "name": "adam",
+      "lr": 0.1
+    },
+    "Criterion": {
+      "name": "DiceLoss"
+    },
+    "Training":
+    {
+      "num_epochs": 10
+    }
+  }
